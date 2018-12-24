@@ -16,7 +16,7 @@ public class ConsumerController {
             loadbalance = "roundrobin")
     private DemoService demoService;
 
-    @RequestMapping("/sayHello")
+    @RequestMapping("/hello")
     public String testHello(@RequestParam(value = "name", required = false) String name) {
         return demoService.sayHello(name);
     }

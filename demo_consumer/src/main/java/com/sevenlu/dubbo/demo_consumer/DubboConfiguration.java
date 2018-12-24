@@ -14,7 +14,7 @@ public class DubboConfiguration {
         ApplicationConfig config=new ApplicationConfig();
         config.setId("consumer");
         config.setName("consumer");
-        config.setQosEnable(false);
+        config.setQosEnable(true);
         config.setQosPort(1111);
         return config;
     }

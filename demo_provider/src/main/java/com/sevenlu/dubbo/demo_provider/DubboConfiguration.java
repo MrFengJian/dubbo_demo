@@ -15,7 +15,8 @@ public class DubboConfiguration {
         config.setLogger("slf4j");
         config.setId("provider");
         config.setName("provider");
-        config.setQosEnable(false);
+        config.setQosEnable(true);
+        config.setQosPort(2222);
         return config;
     }
 
@@ -30,8 +31,8 @@ public class DubboConfiguration {
     }
 
     @Bean
-    public ProtocolConfig dubboProtocolConfig(){
-        ProtocolConfig config=new ProtocolConfig();
+    public ProtocolConfig dubboProtocolConfig() {
+        ProtocolConfig config = new ProtocolConfig();
         config.setName("dubbo");
         config.setId("dubbo");
         config.setPort(12345);
@@ -40,8 +41,8 @@ public class DubboConfiguration {
     }
 
     @Bean
-    public RegistryConfig getRegistryConfig(){
-        RegistryConfig config=new RegistryConfig();
+    public RegistryConfig getRegistryConfig() {
+        RegistryConfig config = new RegistryConfig();
         config.setId("demo-registry");
         //设置组播注册
         config.setAddress("multicast://224.5.6.7:1234");
