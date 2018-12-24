@@ -26,11 +26,16 @@ public class DubboConfiguration {
         config.setId("rest");
         config.setName("rest");
         config.setPort(8888);
-        //对外提供dubbo协议
-//        config.setName("dubbo");
-//        config.setId("dubbo");
-//        config.setPort(12345);
-//        config.setStatus("server");
+        return config;
+    }
+
+    @Bean
+    public ProtocolConfig dubboProtocolConfig(){
+        ProtocolConfig config=new ProtocolConfig();
+        config.setName("dubbo");
+        config.setId("dubbo");
+        config.setPort(12345);
+        config.setStatus("server");
         return config;
     }
 
