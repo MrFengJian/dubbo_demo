@@ -3,21 +3,12 @@ package com.sevenlu.dubbo.demo_provider.impl;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.sevenlu.dubbo.api.DemoService;
 import com.sevenlu.dubbo.model.User;
-import jdk.nashorn.internal.objects.annotations.Getter;
 import org.springframework.stereotype.Component;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
 import java.lang.management.ManagementFactory;
 import java.lang.management.RuntimeMXBean;
 
-@Service(
-        interfaceClass = DemoService.class,
-        version = "${demo.service.version}",
-        application = "${dubbo.application.id}",
-        protocol = "${dubbo.protocol.id}",
-        registry = "${dubbo.registry.id}"
-)
+@Service(version = "${demo.service.version}")
 @Component
 public class ServiceImpl implements DemoService {
     @Override
